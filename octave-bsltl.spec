@@ -2,7 +2,7 @@
 
 Summary:	Functions for working with the biospeckle laser technique in Octave
 Name:		octave-%{octpkg}
-Version:	1.1.1
+Version:	1.3.1
 Release:	1
 Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
@@ -10,7 +10,7 @@ Group:		Sciences/Mathematics
 Url:		https://octave.sourceforge.io/%{octpkg}/
 BuildArch:	noarch
 
-BuildRequires:	octave-devel >= 3.8.0
+BuildRequires:	octave-devel >= 4.0.0
 
 Requires:	octave(api) = %{octave_api}
 
@@ -23,14 +23,29 @@ with the biospeckle laser technique.
 
 This package is part of external Octave-Forge collection.
 
+%files
+%license COPYING
+%doc NEWS
+%dir %{octpkgdir}
+%{octpkgdir}/*
+
+#---------------------------------------------------------------------------
+
 %prep
-%setup -qcT
+%autosetup -p1 -n %{octpkg}-%{version}
+
+# remove backup files
+#find . -name \*~ -delete
 
 %build
-%octave_pkg_build -T
+%set_build_flags
+%octave_pkg_build
 
 %install
 %octave_pkg_install
+
+%check
+%octave_pkg_check
 
 %post
 %octave_cmd pkg rebuild
@@ -40,10 +55,4 @@ This package is part of external Octave-Forge collection.
 
 %postun
 %octave_cmd pkg rebuild
-
-%files
-%dir %{octpkgdir}
-%{octpkgdir}/*
-%doc %{octpkg}-%{version}/NEWS
-%doc %{octpkg}-%{version}/COPYING
 
