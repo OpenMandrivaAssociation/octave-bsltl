@@ -4,10 +4,10 @@ Summary:	Functions for working with the biospeckle laser technique in Octave
 Name:		octave-%{octpkg}
 Version:	1.3.1
 Release:	1
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://octave.sourceforge.io/%{octpkg}/
+Url:		https://packages.octave.org/%{octpkg}/
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.0.0
@@ -20,8 +20,6 @@ Requires(postun): octave
 %description
 The BSLTL package is a free collection of OCTAVE/MATLAB routines for working
 with the biospeckle laser technique.
-
-This package is part of external Octave-Forge collection.
 
 %files
 %license COPYING
