@@ -3,7 +3,7 @@
 Summary:	Functions for working with the biospeckle laser technique in Octave
 Name:		octave-bsltl
 Version:	1.3.1
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/bsltl/
